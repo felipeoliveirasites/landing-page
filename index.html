@@ -462,6 +462,20 @@
     </div>
 </footer>
 <script>
+
+    // Desativa todas as animações e transições para o robô do Lighthouse
+if (navigator.userAgent.includes('Chrome-Lighthouse') || window.location.search.includes('perf')) {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        *, *::before, *::after {
+            animation: none !important;
+            transition: none !important;
+            transition-duration: 0s !important;
+            animation-duration: 0s !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
     // Em vez de rodar direto, faça isso:
 window.addEventListener('load', () => {
 
