@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte ao Aluno | Scalex Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+<style>
+    :root {
+        --primary: #D4AF37; /* Ouro Scalex */
+        --bg: #0a0a0a;
+        --surface: #121212;
+        --text: #e0e0e0;
+        --text-muted: #a0a0a0;
+        --font-title: 'Montserrat', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 80px 20px;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .support-header {
+        text-align: center;
+        margin-bottom: 60px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding-bottom: 40px;
+    }
+
+    .support-pre {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .support-title { 
+        font-size: clamp(2rem, 5vw, 3rem); 
+        color: #fff; 
+        margin-bottom: 15px;
+        font-family: var(--font-title);
+    }
+    
+    .support-title span { color: var(--primary); }
+
+    .support-description { 
+        max-width: 800px; 
+        margin: 0 auto; 
+        color: var(--text-muted); 
+        font-size: 1.1rem;
+    }
+
+    .support-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .support-card {
+        background: var(--surface);
+        padding: 40px 30px;
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .support-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+    }
+
+    .support-card--featured {
+        border: 1px solid var(--primary);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
+    }
+
+    .support-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .support-badge {
+        font-size: 0.7rem;
+        color: var(--primary);
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 1px;
+        background: rgba(212, 175, 55, 0.1);
+        padding: 4px 12px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .support-card-content h3 {
+        color: #fff;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        font-family: var(--font-title);
+    }
+
+    .support-card-content p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+        flex-grow: 1;
+    }
+
+    .support-status {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .btn-support-primary, .btn-support-secondary {
+        display: block;
+        text-align: center;
+        padding: 15px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .btn-support-primary { background: var(--primary); color: #000; }
+    .btn-support-secondary { border: 1px solid rgba(212, 175, 55, 0.4); color: #fff; }
+
+    .support-helper-box {
+        background: rgba(212, 175, 55, 0.05);
+        border-left: 3px solid var(--primary);
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0 12px 12px 0;
+        margin-top: 60px;
+    }
+
+    .btn-helper {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+        border-bottom: 1px solid var(--primary);
+        padding-bottom: 2px;
+        cursor: pointer;
+    }
+
+    /* Estilo do Aviso de Teste */
+    .test-notice {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--surface);
+        border: 1px solid var(--primary);
+        padding: 20px;
+        border-radius: 12px;
+        color: #fff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        z-index: 10000;
+        display: none;
+        max-width: 320px;
+        animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .test-notice h5 { color: var(--primary); margin-bottom: 8px; font-size: 1rem; text-transform: uppercase; font-family: var(--font-title); }
+    .test-notice p { font-size: 0.9rem; margin: 0; color: var(--text-muted); line-height: 1.4; }
+
+    @keyframes slideIn {
+        from { transform: translateX(110%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+        .support-grid { grid-template-columns: 1fr; }
+        .support-helper-box { flex-direction: column; text-align: center; gap: 20px; }
+    }
+</style>
+</head>
+<body>
+
+<main class="support-page">
+    <div class="container">
+        <header class="support-header">
+            <span class="support-pre">Atendimento de Elite</span>
+            <h1 class="support-title">Central de Inteligência <span>Scalex Group</span></h1>
+            <p class="support-description">
+                Bem-vindo ao centro de comando operacional. Escolha o canal adequado para sua necessidade.
+            </p>
+        </header>
+
+        <section class="support-grid">
+            <article class="support-card">
+                <div class="support-card-header">
+                    <div class="support-icon">🚀</div>
+                    <span class="support-badge">Interação Social</span>
+                </div>
+                <div class="support-card-content">
+                    <h3>Comunidade de Estrategistas</h3>
+                    <p>O campo de batalha real. Debata métricas e análise de funis com outros grandes players.</p>
+                </div>
+                <div class="support-card-footer">
+                    <span class="support-status">Disponível 24/7</span>
+                    <a href="#" class="btn-support-secondary">Acessar Ecossistema</a>
+                </div>
+            </article>
+
+            <article class="support-card support-card--featured">
+                <div class="support-card-header">
+                    <div class="support-icon">⚡</div>
+                    <span class="support-badge">Alta Prioridade</span>
+                </div>
+                <div class="support-card-content">
+                    <h3>Plantão de Dúvidas (WhatsApp)</h3>
+                    <p>Encontrou um obstáculo técnico imediato? Fale diretamente com nossos consultores agora.</p>
+                </div>
+                <div class="support-card-footer">
+                    <span class="support-status">Seg a Sex • 09h às 18h</span>
+                    <a href="#" class="btn-support-primary">Falar com Consultor de Elite</a>
+                </div>
+            </article>
+
+            <article class="support-card">
+                <div class="support-card-header">
+                    <div class="support-icon">🛠️</div>
+                    <span class="support-badge">Administrativo</span>
+                </div>
+                <div class="support-card-content">
+                    <h3>Suporte Técnico e Acessos</h3>
+                    <p>Problemas com login, notas fiscais ou dúvidas específicas sobre os módulos.</p>
+                </div>
+                <div class="support-card-footer">
+                    <span class="support-status">Até 24h úteis</span>
+                    <a href="#" class="btn-support-secondary">Abrir Ticket Oficial</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="support-helper">
+            <div class="support-helper-box">
+                <div class="support-helper-text">
+                    <h4>Poupe seu tempo de escala</h4>
+                    <p>Nossa base de conhecimento contém vídeos resolvendo 80% das dúvidas comuns.</p>
+                </div>
+                <a href="#" class="btn-helper">Ver FAQ na Área de Membros</a>
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="testNotice" class="test-notice">
+    <h5 id="noticeTitle">Ação de Teste</h5>
+    <p id="noticeDesc">Esta função será ativada na versão final.</p>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const notice = document.getElementById('testNotice');
+        const title = document.getElementById('noticeTitle');
+        const desc = document.getElementById('noticeDesc');
+        let timer;
+
+        function showNotice(t, d) {
+            clearTimeout(timer); // Reseta o tempo se clicar em outro botão rápido
+            title.innerText = t;
+            desc.innerText = d;
+            notice.style.display = 'block';
+            
+            timer = setTimeout(() => {
+                notice.style.display = 'none';
+            }, 4000);
+        }
+
+        // Seleciona os botões
+        const buttons = document.querySelectorAll('.btn-support-secondary, .btn-support-primary, .btn-helper');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const btnText = btn.innerText.toLowerCase();
+
+                if (btnText.includes('ecossistema')) {
+                    showNotice('Acesso à Comunidade', 'O aluno seria redirecionado para o Discord ou Grupo Exclusivo da Scalex.');
+                } 
+                else if (btnText.includes('consultor') || btnText.includes('whatsapp')) {
+                    showNotice('WhatsApp de Elite', 'Este botão abriria o WhatsApp com um texto pronto para o consultor de plantão.');
+                } 
+                else if (btnText.includes('ticket')) {
+                    showNotice('Suporte Administrativo', 'Isso abriria o formulário de ticket para questões financeiras e de acesso.');
+                }
+                else if (btnText.includes('faq')) {
+                    showNotice('Central de Ajuda', 'Direciona para a base de conhecimento com tutoriais rápidos.');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
