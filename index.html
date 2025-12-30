@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preload" 
-        href="assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital-mobile.webp" 
+        href="./assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital-mobile.webp" 
         as="image" 
         media="(max-width: 767px)"
         fetchpriority="high">
 
         <link rel="preload" 
-        href="assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital.webp" 
+        href="./assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital.webp" 
         as="image" 
         media="(min-width: 768px)"
         fetchpriority="high">
 
 
-    <link rel="preload" href="assets/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-    <link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
     <script>
     // Executa antes de renderizar qualquer pixel na tela
@@ -27,9 +27,9 @@
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
     })();
-</script>
+    </script>
 
-    <style id="critical-style">@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(assets/inter.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(assets/inter.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:"Montserrat";font-style:normal;font-weight:400;font-display:swap;src:url(assets/montserrat.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:"Montserrat";font-style:normal;font-weight:700;font-display:swap;src:url(assets/montserrat.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:"Montserrat";font-style:normal;font-weight:900;font-display:swap;src:url(assets/montserrat.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}:root{--primary:#D4AF37;--secondary:#0A0A0B;--surface:#1A1A1D;--text-high:#FFFFFF;--text-low:#A0A0A0;--success:#2ECC71;--shadow-color:rgba(255, 255, 255, .7);--shadow-color-inverte:rgba(0, 0, 0, 0.4);--shadow-color-escura:rgba(0, 0, 0, 0.4);--shadow-color-branca:rgba(255, 255, 255, .7);--shadow-ambient:rgba(0, 0, 0, 0.4);--border-color:rgba(255, 255, 255, 0.08);--shadow-base:rgba(0, 0, 0, 0.4);--border-primary:rgba(212, 175, 55, 0.3);--border-subtle:rgba(255, 255, 255, 0.08);--border-glass:rgba(255, 255, 255, 0.05)}[data-theme=light]{--primary:color-mix(in srgb, #D4AF37, #3d2b1f 30%);--secondary:#F8F9FA;--surface:#FFFFFF;--text-high:#121212;--text-low:#454545;--success:#16a34a;--shadow-color:rgba(0, 0, 0, 0.4);--shadow-color-inverte:rgba(255, 255, 255, .7);--shadow-color-branca:rgba(255, 255, 255, .7);--shadow-color-escura:rgba(0, 0, 0, 0.4);--shadow-ambient:rgba(10, 10, 11, 0.04);--border-color:rgba(0, 0, 0, 0.06);--shadow-base:rgba(10, 10, 11, 0.1);--border-primary:color-mix(in srgb, #D4AF37, #3d2b1f 40%);--border-subtle:rgba(0, 0, 0, 0.06);--border-glass:rgba(0, 0, 0, 0.03)}*, *::before, *::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}html{font-size:100%;scrollbar-gutter:stable}body{font-family:"Inter", sans-serif;background-color:var(--surface);color:var(--text-low);line-height:1.5;overflow-x:hidden}h1, h2, h3, h4, h5, h6{line-height:1.2;font-weight:700}a{text-decoration:none;color:inherit;transition:0.3s ease}img{max-width:100%;height:auto;display:block}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:8px;font-weight:700;cursor:pointer;border:none;transition:transform 0.2s ease, filter 0.2s ease !important}.btn:hover{transform:scale(1.05);filter:brightness(1.1)}.btn:active{transform:scale(0.98)}.hero__button{background:linear-gradient(135deg, var(--success) 0%, #16a34a 100%);color:var(--secondary);font-size:1.1rem;box-shadow:0 15px 30px rgba(var(--success), 0.2);text-shadow:0.5px 1px 1px var(--shadow-color), 5px 1px 10px var(--shadow-color);letter-spacing:1px;position:relative;z-index:1}.hero__button:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(var(--success), 0.3)}.hero__button::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;background:var(--success);z-index:-1;animation:pulseGlow 2s infinite !important}.hero{position:relative;padding:120px 0 80px;background-color:var(--secondary);background-image:radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--primary), transparent 92%) 0%, transparent 40%), radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--primary), transparent 95%) 0%, transparent 40%)}.hero__wrapper{display:flex;align-items:center;gap:40px}@media (max-width:768px){.hero__wrapper{flex-direction:column;text-align:center}}.hero__content{flex:1;max-width:650px}.hero__content span{color:var(--text-high)}.hero__content span > span{color:var(--primary)}.hero__pre-title{display:inline-block;font-family:"Inter", sans-serif;font-size:0.85rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;border-bottom:1px solid var(--primary);padding-bottom:4px}.hero__title{font-family:"Montserrat", sans-serif;font-size:3.8rem;line-height:1.1;color:var(--text-high);margin-bottom:25px}.hero__title span{background:linear-gradient(90deg, var(--primary), #f5d76e);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}@media (max-width:768px){.hero__title{font-size:2.5rem}}.hero__description{font-size:1.2rem;line-height:1.6;color:var(--text-low);margin-bottom:40px}@media (max-width:768px){.hero__description{font-size:1.1rem}}.hero__cta-area{display:flex;flex-direction:column;align-items:flex-start;gap:20px}@media (max-width:768px){.hero__cta-area{align-items:center}}.hero__image{flex:1;display:flex;justify-content:center;align-items:center;position:relative;min-height:449px;aspect-ratio:307/456;width:307px;max-height:100%;object-fit:cover}.hero__image-container{contain:paint;position:relative;perspective:1200px;display:flex;justify-content:center;align-items:center}.hero__image-container img{max-width:100%;height:auto;border-radius:8px;position:relative;border:5px solid color-mix(in srgb, var(--primary), transparent 50%);border-left-width:2px;border-top-width:2px}.hero__image-container img:hover{border-width:0px}.hero__badge{position:absolute;bottom:20px;right:0;background:var(--primary);color:var(--secondary);padding:12px 20px;font-weight:700;border-radius:4px;box-shadow:0 10px 20px rgba(0, 0, 0, 0.3);animation:badge 1s infinite alternate;transition:all 0.3s !important;z-index:3;border:1px solid var(--border-color);border-radius:16px;transition:all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);background-color:var(--surface);background:rgba(var(--surface-rgb), 0.8);backdrop-filter:blur(12px);border:1px solid rgba(255, 255, 255, 0.1)}.hero__trust-bar{font-size:0.85rem;color:var(--text-low)}#btn-icon-treinamento{position:fixed;top:20px;left:20px;backface-visibility:hidden;background-color:none;z-index:3;background:none;border:none;padding:0;margin:0;outline:none;box-shadow:none;appearance:none;cursor:pointer}.icone-treinamneto{opacity:1;height:42px;width:auto;filter:hue-rotate(262deg)}@media screen and (min-width:765px){.icone-treinamneto{width:100px;top:10%;left:5%}.hero img{max-width:507px;max-height:756px}}.theme-switch{position:fixed;top:20px;right:20px;width:42px;height:42px;background:color-mix(in srgb, var(--surface), transparent 20%);backdrop-filter:blur(8px);border:1px solid color-mix(in srgb, #D4AF37, transparent 80%);border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;transition:all 0.4s cubic-bezier(0.23, 1, 0.32, 1);box-shadow:0 8px 16px rgba(0, 0, 0, 0.4)}.theme-switch:hover{border-color:#D4AF37;box-shadow:0 0 20px color-mix(in srgb, #D4AF37, transparent 85%);transform:translateY(-2px)}.theme-switch:active{transform:scale(0.95)}.theme-switch svg{position:absolute;width:18px;fill:#D4AF37;filter:drop-shadow(0 0 2px color-mix(in srgb, #D4AF37, transparent 50%));transition:all 0.5s cubic-bezier(0.4, 0, 0.2, 1)}.theme-switch .icon-sun{opacity:0;transform:scale(0.3) rotate(-90deg)}.theme-switch .icon-moon{opacity:1;transform:scale(1) rotate(0)}[data-theme=light] .theme-switch{background:color-mix(in srgb, white, transparent 10%);border-color:color-mix(in srgb, #D4AF37, transparent 60%);box-shadow:0 8px 16px rgba(0, 0, 0, 0.05)}[data-theme=light] .theme-switch .icon-sun{opacity:1;transform:scale(1) rotate(0)}[data-theme=light] .theme-switch .icon-moon{opacity:0;transform:scale(0.3) rotate(90deg)}@media screen and (min-width:765px){.theme-switch{top:40px;right:5%;width:48px;height:48px}.theme-switch svg{width:20px}#btn-icon-treinamento{position:fixed;left:5%;opacity:1;top:40px;height:48px;width:auto;z-index:3}#btn-icon-treinamento img{height:48px;width:auto}}@keyframes digita-otimizado{10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{width:0}5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{width:calc(100% + 18px)}}@keyframes cursor{0%, 100%{border-left-color:transparent}50%{border-left-color:var(--primary)}}@keyframes palavras{0%, 20%{content:"Faturamento"}21%, 40%{content:"Escala"}41%, 60%{content:"Segurança"}61%, 80%{content:"Gestão"}81%, 100%{content:"ROI"}}@keyframes badge{from{transform:skew(-4deg)}to{transform:skew(4deg)}}@keyframes pulseGlow{0%{transform:scale(1);opacity:0.4}100%{transform:scale(1.07);opacity:0}}.txt-animado{font-size:45px;font-weight:700;font-family:"Montserrat", sans-serif;color:var(--primary);display:inline-block;position:relative;contain:layout}@media (max-width:768px){.txt-animado{font-size:32px}}.txt-animado{perspective:1000px}.txt-animado span{position:relative;display:inline-block;min-width:250px;text-align:center;will-change:content, width}.txt-animado span::before{content:"Faturamento";animation:palavras 15s infinite none;backface-visibility:hidden}.txt-animado span::after{content:"";position:absolute;height:100%;width:100%;background-color:var(--secondary);border-left:3px solid var(--primary);right:-5px;top:0;transform:translateX(0);backface-visibility:hidden;animation:cursor 0.8s infinite none, digita-otimizado 15s steps(12) infinite none}@media screen and (min-width:756px){.txt-animado span{text-align:left}}</style>   
+    <style id="critical-style">@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter.woff2") format("woff2-variations"), url("/fonts/inter.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/montserrat.woff2") format("woff2-variations"), url("/fonts/montserrat.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}:root, [data-theme=dark]{--primary:#D4AF37;--secondary:#0A0A0B;--surface:#1A1A1D;--text-high:#FFFFFF;--text-low:#A0A0A0;--success:#2ECC71;--shadow-color:rgba(255, 255, 255, .7);--shadow-color-inverte:rgba(0, 0, 0, 0.4);--shadow-color-escura:rgba(0, 0, 0, 0.4);--shadow-color-branca:rgba(255, 255, 255, .7);--shadow-ambient:rgba(0, 0, 0, 0.4);--border-color:rgba(255, 255, 255, 0.08);--shadow-base:rgba(0, 0, 0, 0.4);--border-primary:rgba(212, 175, 55, 0.3);--border-subtle:rgba(255, 255, 255, 0.08);--border-glass:rgba(255, 255, 255, 0.05)}[data-theme=light]{--primary:color-mix(in srgb, #D4AF37, #3d2b1f 30%);--secondary:#F8F9FA;--surface:#FFFFFF;--text-high:#121212;--text-low:#454545;--success:#16a34a;--shadow-color:rgba(0, 0, 0, 0.4);--shadow-color-inverte:rgba(255, 255, 255, .7);--shadow-color-branca:rgba(255, 255, 255, .7);--shadow-color-escura:rgba(0, 0, 0, 0.4);--shadow-ambient:rgba(10, 10, 11, 0.04);--border-color:rgba(0, 0, 0, 0.06);--shadow-base:rgba(10, 10, 11, 0.1);--border-primary:color-mix(in srgb, #D4AF37, #3d2b1f 40%);--border-subtle:rgba(0, 0, 0, 0.06);--border-glass:rgba(0, 0, 0, 0.03)}*, *::before, *::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}html{font-size:100%;scrollbar-gutter:stable}body{font-family:"Inter", sans-serif;background-color:var(--surface);color:var(--text-low);line-height:1.5;overflow-x:hidden}h1, h2, h3, h4, h5, h6{line-height:1.2;font-weight:700}a{text-decoration:none;color:inherit;transition:0.3s ease}img{max-width:100%;height:auto;display:block}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:8px;font-weight:700;cursor:pointer;border:none;transition:transform 0.2s ease, filter 0.2s ease !important}.btn:hover{transform:scale(1.05);filter:brightness(1.1)}.btn:active{transform:scale(0.98)}.hero__button{background:linear-gradient(135deg, var(--success) 0%, #16a34a 100%);color:var(--secondary);font-size:1.1rem;box-shadow:0 15px 30px rgba(var(--success), 0.2);text-shadow:0.5px 1px 1px var(--shadow-color), 5px 1px 10px var(--shadow-color);letter-spacing:1px;position:relative;z-index:1}.hero__button:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(var(--success), 0.3)}.hero__button::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;background:var(--success);z-index:-1;animation:pulseGlow 2s infinite !important}.hero{position:relative;padding:120px 0 80px;background-color:var(--secondary);background-image:radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--primary), transparent 92%) 0%, transparent 40%), radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--primary), transparent 95%) 0%, transparent 40%)}.hero__wrapper{display:flex;align-items:center;gap:40px}@media (max-width:768px){.hero__wrapper{flex-direction:column;text-align:center}}.hero__content{flex:1;max-width:650px}.hero__content span{color:var(--text-high)}.hero__content span > span{color:var(--primary)}.hero__pre-title{display:inline-block;font-family:"Inter", sans-serif;font-size:0.85rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;border-bottom:1px solid var(--primary);padding-bottom:4px}.hero__title{font-family:"Montserrat", sans-serif;font-size:3.8rem;line-height:1.1;color:var(--text-high);margin-bottom:25px}.hero__title span{background:linear-gradient(90deg, var(--primary), #f5d76e);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}@media (max-width:768px){.hero__title{font-size:2.5rem}}.hero__description{font-size:1.2rem;line-height:1.6;color:var(--text-low);margin-bottom:40px}@media (max-width:768px){.hero__description{font-size:1.1rem}}.hero__cta-area{display:flex;flex-direction:column;align-items:flex-start;gap:20px}@media (max-width:768px){.hero__cta-area{align-items:center}}.hero__image{flex:1;display:flex;justify-content:center;align-items:center;position:relative;min-height:449px;aspect-ratio:307/456;width:307px;max-height:100%;object-fit:cover}.hero__image-container{contain:paint;position:relative;perspective:1200px;display:flex;justify-content:center;align-items:center}.hero__image-container img{max-width:100%;height:auto;border-radius:8px;position:relative;border:5px solid color-mix(in srgb, var(--primary), transparent 50%);border-left-width:2px;border-top-width:2px}.hero__image-container img:hover{border-width:0px}.hero__badge{position:absolute;bottom:20px;right:0;background:var(--primary);color:var(--secondary);padding:12px 20px;font-weight:700;border-radius:4px;box-shadow:0 10px 20px rgba(0, 0, 0, 0.3);animation:badge 1s infinite alternate;transition:all 0.3s !important;z-index:3;border:1px solid var(--border-color);border-radius:16px;transition:all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);background-color:var(--surface);background:rgba(var(--surface-rgb), 0.8);backdrop-filter:blur(12px);border:1px solid rgba(255, 255, 255, 0.1)}.hero__trust-bar{font-size:0.85rem;color:var(--text-low)}#btn-icon-treinamento{position:fixed;top:20px;left:20px;backface-visibility:hidden;background-color:none;z-index:3;background:none;border:none;padding:0;margin:0;outline:none;box-shadow:none;appearance:none;cursor:pointer}.icone-treinamneto{opacity:1;height:42px;width:auto;filter:hue-rotate(262deg)}@media screen and (min-width:765px){.icone-treinamneto{width:100px;top:10%;left:5%}.hero img{max-width:507px;max-height:756px}}.theme-switch{position:fixed;top:20px;right:20px;width:42px;height:42px;background:color-mix(in srgb, var(--surface), transparent 20%);backdrop-filter:blur(8px);border:1px solid color-mix(in srgb, #D4AF37, transparent 80%);border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;transition:all 0.4s cubic-bezier(0.23, 1, 0.32, 1);box-shadow:0 8px 16px rgba(0, 0, 0, 0.4)}.theme-switch:hover{border-color:#D4AF37;box-shadow:0 0 20px color-mix(in srgb, #D4AF37, transparent 85%);transform:translateY(-2px)}.theme-switch:active{transform:scale(0.95)}.theme-switch svg{position:absolute;width:18px;fill:#D4AF37;filter:drop-shadow(0 0 2px color-mix(in srgb, #D4AF37, transparent 50%));transition:all 0.5s cubic-bezier(0.4, 0, 0.2, 1)}.theme-switch .icon-sun{opacity:0;transform:scale(0.3) rotate(-90deg)}.theme-switch .icon-moon{opacity:1;transform:scale(1) rotate(0)}[data-theme=light] .theme-switch{background:color-mix(in srgb, white, transparent 10%);border-color:color-mix(in srgb, #D4AF37, transparent 60%);box-shadow:0 8px 16px rgba(0, 0, 0, 0.05)}[data-theme=light] .theme-switch .icon-sun{opacity:1;transform:scale(1) rotate(0)}[data-theme=light] .theme-switch .icon-moon{opacity:0;transform:scale(0.3) rotate(90deg)}@media screen and (min-width:765px){.theme-switch{top:40px;right:5%;width:48px;height:48px}.theme-switch svg{width:20px}#btn-icon-treinamento{position:fixed;left:5%;opacity:1;top:40px;height:48px;width:auto;z-index:3}#btn-icon-treinamento img{height:48px;width:auto}}@keyframes digita-otimizado{10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{width:0}5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{width:calc(100% + 18px)}}@keyframes cursor{0%, 100%{border-left-color:transparent}50%{border-left-color:var(--primary)}}@keyframes palavras{0%, 20%{content:"Faturamento"}21%, 40%{content:"Escala"}41%, 60%{content:"Segurança"}61%, 80%{content:"Gestão"}81%, 100%{content:"ROI"}}@keyframes badge{from{transform:skew(-4deg)}to{transform:skew(4deg)}}@keyframes pulseGlow{0%{transform:scale(1);opacity:0.4}100%{transform:scale(1.07);opacity:0}}.txt-animado{font-size:45px;font-weight:700;font-family:"Montserrat", sans-serif;color:var(--primary);display:inline-block;position:relative;contain:layout}@media (max-width:768px){.txt-animado{font-size:32px}}.txt-animado{perspective:1000px}.txt-animado span{position:relative;display:inline-block;min-width:250px;text-align:center;will-change:content, width}.txt-animado span::before{content:"Faturamento";animation:palavras 15s infinite none;backface-visibility:hidden}.txt-animado span::after{content:"";position:absolute;height:100%;width:100%;background-color:var(--secondary);border-left:3px solid var(--primary);right:-5px;top:0;transform:translateX(0);backface-visibility:hidden;animation:cursor 0.8s infinite none, digita-otimizado 15s steps(12) infinite none}@media screen and (min-width:756px){.txt-animado span{text-align:left}}</style>   
 
     <title>Scalex Group | Treinamento de Elite: A Ciência da Escala 7 Dígitos</title>
     <meta name="description" content="Domine a ciência da escala de 7 dígitos. Aprenda a criar estruturas nota 100/100 no Google e Meta para blindar seu tráfego e faturar mais. Garanta sua vaga!">
@@ -87,17 +87,17 @@
             <div class="hero__image">
                 <div class="hero__image-container estado">
                  <picture id="pic_img_hero">
-                    <source media="(min-width: 769px)" 
+                    <source media="(min-width: 768px)" 
                             srcset="assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital.webp" 
-                            width="507" 
-                            height="756"> 
-                    <img src="assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital-mobile.webp" 
-                        srcset="assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital-mobile.webp 1x, assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital.webp 2x"
-                        alt="Homem de negócios feliz com tabuleta digital" 
-                        width="300" 
-                        height="449" 
-                        fetchpriority="high" 
-                        class="hero-img">
+                            width="500" 
+                            height="759"> 
+                    <img src="./assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital-mobile.webp" 
+                    srcset="assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital-mobile.webp 1x, assets/img/retrato-homem-de-negocios-feliz-com-tabuleta-digital.webp 2x"
+                    alt="Homem de negócios feliz com tabuleta digital" 
+                    width="300" 
+                    height="449" 
+                    fetchpriority="high" 
+                    class="hero-img">
                 </picture>
                     
                     <div class="hero__badge">
@@ -692,111 +692,14 @@ document.addEventListener('click', (e) => {
 window.addEventListener('load', () => {
 
     requestAnimationFrame(() => {
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            // Verificamos se o tema atual é light
-            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-            
-            if (isLight) {
-                // Mudar para Dark
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                // Mudar para Light
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
+   
 
-        // OBSERVER INTERSECTION
-
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.01      // Dispara IMEDIATAMENTE ao detectar o elemento
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const target = entry.target;
-        
-        if (entry.isIntersecting) {
-            // LIGA TUDO
-            target.classList.add('active');
-            target.classList.add('animate');
-            // Se for um elemento individual de REVEAL, para de observar para sempre
-            if (target.classList.contains('reveal')) {
-                observer.unobserve(target);
-            }
-        } else {
-            // DESLIGA apenas as seções (não entra aqui para .reveal porque já demos unobserve)
-            target.classList.remove('active');
-        }
     });
-}, observerOptions);
+   
+});
+</script>
 
-// Registra todos os alvos
-document.querySelectorAll('.reveal, header, section, footer').forEach(el => {
-    observer.observe(el);
-});        
-
-       /* MODAL CHECKOUT E PAGAMENTO  */
-
-          // 1. SELEÇÃO DE ELEMENTOS
-    const modal = document.getElementById("modal-compra");
-    const btnTrigger = document.getElementById("quero-ser-elite");
-    const btnClose = document.querySelector(".modal__close");
-    const btnCheckout = document.querySelector(".btn-checkout");
-    const btnIcon = document.getElementById("btn-icon-treinamento")
-    const cta_faq = document.getElementById("cta_faq")
-    const btn_hero__button = document.getElementById("btn_hero__button")
-
-    // 2. FUNÇÃO DE PERFORMANCE (CARREGAMENTO DINÂMICO)
-    const loadExternalScript = (src) => {
-        return new Promise((resolve, reject) => {
-            // Se o script já existir, resolve imediatamente
-            if (document.querySelector(`script[src="${src}"]`)) return resolve();
-            
-            const script = document.createElement('script');
-            script.src = src;
-            script.async = true; // Não trava o carregamento
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-        });
-    };
-
-    // 3. FUNÇÕES DE CONTROLE DO MODAL
-    const abrirModal = (e) => {
-        e.preventDefault();
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Trava scroll do fundo
-        
-        // Pré-carrega o SDK assim que o modal abre para ganhar tempo
-        loadExternalScript("https://sdk.mercadopago.com/js/v2")
-            .catch(err => console.error("Erro ao pré-carregar SDK", err));
-    };
-
-    const fecharModal = () => {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Devolve scroll
-    };
-
-    // 4. LÓGICA DO CHECKOUT (SIMULAÇÃO API)
-    const handleCheckout = async () => {
-        // Feedback visual imediato
-        btnCheckout.innerHTML = `<span class="spinner"></span> PROCESSANDO...`;
-        btnCheckout.style.pointerEvents = "none";
-
-        try {
-            // Garante que o SDK está disponível
-            await loadExternalScript("https://sdk.mercadopago.com/js/v2");
-
-            // Simula o tempo de resposta da API
-            setTimeout(() => {
-                const overlay = document.createElement('div');
-                overlay.className = 'api-simulada-overlay';
-                overlay.innerHTML = `
+<script>(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))t(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&t(c)}).observe(document,{childList:!0,subtree:!0});function a(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function t(e){if(e.ep)return;e.ep=!0;const n=a(e);fetch(e.href,n)}})();function g(){const r=document.getElementById("modal-retencao"),o=document.getElementById("btn-ficar"),a=document.getElementById("btn-sair");let t=!1;const e=()=>{window.history.state?.trava||(window.history.pushState({trava:!0},""),console.log("Sistema de retenção pronto."),window.onpopstate=n=>{t||(t=!0,r.style.display="flex",window.history.pushState({trava:!0},""))})};o.onclick=()=>{r.style.display="none";const n=encodeURIComponent("Vim pela página de Elite e quero meu Diagnóstico de Escala. Estou cansado do operacional.");window.open(`https://wa.me/5511999999999?text=${n}`,"_blank")},a.onclick=()=>{t=!1,r.style.display="none",window.onpopstate=null,window.history.go(-2)},document.addEventListener("click",e,{once:!0}),document.addEventListener("scroll",e,{once:!0})}function E(r){const o=document.querySelector("#seu-formulario");o&&o.addEventListener("submit",async a=>{a.preventDefault();const t=o.querySelector("button");t.disabled=!0,t.innerText="Enviando...";const e=Object.fromEntries(new FormData(o).entries());try{(await fetch(r,{method:"POST",body:JSON.stringify(e)})).ok&&(window.location.href="/obrigado.html")}catch{alert("Erro ao enviar. Tente novamente."),t.disabled=!1,t.innerText="Enviar"}})}function h(){document.getElementById("theme-toggle").addEventListener("click",()=>{document.documentElement.getAttribute("data-theme")==="light"?(document.documentElement.setAttribute("data-theme","dark"),localStorage.setItem("theme","dark")):(document.documentElement.setAttribute("data-theme","light"),localStorage.setItem("theme","light"))})}function y(){const r={root:null,rootMargin:"0px",threshold:.01},o=new IntersectionObserver(a=>{a.forEach(t=>{const e=t.target;t.isIntersecting?(e.classList.add("active"),e.classList.add("animate"),e.classList.contains("reveal")&&o.unobserve(e)):e.classList.remove("active")})},r);document.querySelectorAll(".reveal, header, section, footer").forEach(a=>{o.observe(a)})}function v(){const r=document.getElementById("modal-compra"),o=document.getElementById("quero-ser-elite"),a=document.querySelector(".modal__close"),t=document.querySelector(".btn-checkout"),e=document.getElementById("btn-icon-treinamento"),n=document.getElementById("cta_faq"),c=document.getElementById("btn_hero__button"),m=s=>new Promise((l,p)=>{if(document.querySelector(`script[src="${s}"]`))return l();const i=document.createElement("script");i.src=s,i.async=!0,i.onload=l,i.onerror=p,document.head.appendChild(i)}),d=s=>{s.preventDefault(),r.style.display="flex",document.body.style.overflow="hidden",m("https://sdk.mercadopago.com/js/v2").catch(l=>console.error("Erro ao pré-carregar SDK",l))},u=()=>{r.style.display="none",document.body.style.overflow="auto"},f=async()=>{t.innerHTML='<span class="spinner"></span> PROCESSANDO...',t.style.pointerEvents="none";try{await m("https://sdk.mercadopago.com/js/v2"),setTimeout(()=>{const s=document.createElement("div");s.className="api-simulada-overlay",s.innerHTML=`
                     <div class="api-simulada-content">
                         <img src="https://img.icons8.com/color/96/mercado-pago.png" alt="Mercado Pago">
                         <h3>Ambiente de Demonstração</h3>
@@ -804,38 +707,7 @@ document.querySelectorAll('.reveal, header, section, footer').forEach(el => {
                         <div class="status-badge">DEVELOPER MODE: ONLINE</div>
                         <button onclick="this.parentElement.parentElement.remove()" class="btn-close-api">VOLTAR AO PROJETO</button>
                     </div>
-                `;
-                document.body.appendChild(overlay);
-
-                // Reset do botão
-                btnCheckout.innerHTML = "FINALIZAR INSCRIÇÃO AGORA";
-                btnCheckout.style.pointerEvents = "all";
-            }, 1500);
-
-        } catch (error) {
-            btnCheckout.innerHTML = "ERRO NA CONEXÃO";
-            btnCheckout.style.pointerEvents = "all";
-        }
-    };
-
-    // 5. EVENT LISTENERS
-    if (btnTrigger) btnTrigger.addEventListener("click", abrirModal);
-    if (cta_faq) cta_faq.addEventListener("click", abrirModal);
-    if (btn_hero__button) btn_hero__button.addEventListener("click", abrirModal);
-    if (btnIcon) btnIcon.addEventListener("click", abrirModal);
-    if (btnClose) btnClose.addEventListener("click", fecharModal);
-    if (btnCheckout) btnCheckout.addEventListener("click", handleCheckout);
-
-
-    // Fechar ao clicar fora ou ESC
-    window.addEventListener("click", (e) => { if (e.target === modal) fecharModal(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") fecharModal(); });
-    });
-   
-});
-</script>
-
-<script>(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function o(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();function a(){const r=document.getElementById("modal-retencao"),n=document.getElementById("btn-ficar"),i=document.getElementById("btn-sair");let o=!1;const e=()=>{window.history.state?.trava||(window.history.pushState({trava:!0},""),console.log("Sistema de retenção pronto."),window.onpopstate=t=>{o||(o=!0,r.style.display="flex",window.history.pushState({trava:!0},""))})};n.onclick=()=>{r.style.display="none";const t=encodeURIComponent("Vim pela página de Elite e quero meu Diagnóstico de Escala. Estou cansado do operacional.");window.open(`https://wa.me/5511999999999?text=${t}`,"_blank")},i.onclick=()=>{o=!1,r.style.display="none",window.onpopstate=null,window.history.go(-2)},document.addEventListener("click",e,{once:!0}),document.addEventListener("scroll",e,{once:!0})}function c(r){const n=document.querySelector("#seu-formulario");n&&n.addEventListener("submit",async i=>{i.preventDefault();const o=n.querySelector("button");o.disabled=!0,o.innerText="Enviando...";const e=Object.fromEntries(new FormData(n).entries());try{(await fetch(r,{method:"POST",body:JSON.stringify(e)})).ok&&(window.location.href="/obrigado.html")}catch{alert("Erro ao enviar. Tente novamente."),o.disabled=!1,o.innerText="Enviar"}})}window.addEventListener("load",()=>{requestAnimationFrame(()=>{console.log("🚀 Sistemas de alta performance iniciados"),a(),c("SUA_URL_DO_WORKER_AQUI")})});
+                `,document.body.appendChild(s),t.innerHTML="FINALIZAR INSCRIÇÃO AGORA",t.style.pointerEvents="all"},1500)}catch{t.innerHTML="ERRO NA CONEXÃO",t.style.pointerEvents="all"}};o&&o.addEventListener("click",d),n&&n.addEventListener("click",d),c&&c.addEventListener("click",d),e&&e.addEventListener("click",d),a&&a.addEventListener("click",u),t&&t.addEventListener("click",f),window.addEventListener("click",s=>{s.target===r&&u()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&u()})}function b(){new PerformanceObserver(r=>{for(const o of r.getEntries()){const a=o.duration,t=a<200?"✅ EXCELENTE":a<500?"⚠️ NECESSITA MELHORIA":"❌ POBRE";console.log(`%c[Interação Detectada]: ${o.name}`,"font-weight: bold; color: blue"),console.log(`Duração: ${a.toFixed(2)}ms | Status: ${t}`),a>200&&console.warn("Dica: Verifique se há Long Tasks ou se está usando propriedades que disparam Layout/Paint no clique.")}}).observe({type:"event",buffered:!0}),new PerformanceObserver(r=>{for(const o of r.getEntries())console.error(`%c[Alerta de Gargalo]: Tarefa pesada detectada (${o.duration.toFixed(2)}ms)!`,"color: red; font-weight: bold"),console.log("Isso pode travar a reação ao clique e baixar seu INP.")}).observe({type:"longtask",buffered:!0})}window.addEventListener("load",()=>{requestAnimationFrame(()=>{console.log("🚀 Sistemas de alta performance iniciados"),v(),h(),g(),y(),b(),E("SUA_URL_DO_WORKER_AQUI")})});
 //# sourceMappingURL=main.js.map
 </script></body>
 </html>
