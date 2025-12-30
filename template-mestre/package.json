@@ -1,0 +1,30 @@
+{
+  "name": "template-mestre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "dev": "open-cli http://localhost:4001/admin/index.html & tinacms dev",
+  "build": "tinacms build",
+  "stop": "fuser -k 9000/tcp 4001/tcp"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipeoliveirasites/template-mestre.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipeoliveirasites/template-mestre/issues"
+  },
+  "homepage": "https://github.com/felipeoliveirasites/template-mestre#readme",
+  "dependencies": {
+    "tinacms": "^3.1.3"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^2.0.6",
+    "@types/node": "^25.0.3",
+    "open-cli": "^8.0.0"
+  }
+}
