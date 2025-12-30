@@ -37,7 +37,7 @@
 
     <link rel="canonical" href="https://landing-page-8cf.pages.dev/" />
   
-  <link rel="stylesheet" crossorigin href="./assets/main-BI0XrCo5.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" crossorigin href="./assets/main.css" media="print" onload="this.media='all'">
 </head>
 <body>
  
@@ -650,7 +650,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-</script><script>
+</script>
+<script>
     const img_hero = document.querySelector(".hero__image-container")
     const estado = document.querySelector(".estado")
 
@@ -664,6 +665,26 @@ document.addEventListener('click', (e) => {
     }
     img_hero.addEventListener("click", explodir)
 </script>
+  <div id="modal-retencao" class="modal-retencao">
+      <div class="modal-retencao__content">
+          <span style="color: var(--primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;">OPORTUNIDADE ÚNICA</span>
+          
+          <h2 class="modal-retencao__title">Vai continuar sendo um "Operador Barato"?</h2>
+          
+          <p class="modal-retencao__text">
+              Eu sei que você está cansado de ser refém do WhatsApp e do algoritmo. <br><br>
+              Antes de sair, <strong>liberei 5 vagas</strong> para um Diagnóstico de Escala gratuito. Vamos analisar sua operação e mostrar como chegar aos 7 dígitos.
+          </p>
+  
+          <button id="btn-ficar" class="modal-retencao__btn-primary">
+              QUERO MEU DIAGNÓSTICO VIA WHATSAPP
+          </button>
+          
+          <button id="btn-sair" class="modal-retencao__btn-link">
+              Não, prefiro continuar no operacional massante.
+          </button>
+      </div>
+  </div>
 <script>
 
 
@@ -814,7 +835,9 @@ document.querySelectorAll('.reveal, header, section, footer').forEach(el => {
 });
 </script>
 
-</body>
+<script>(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function o(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();function a(){const r=document.getElementById("modal-retencao"),n=document.getElementById("btn-ficar"),i=document.getElementById("btn-sair");let o=!1;const e=()=>{window.history.state?.trava||(window.history.pushState({trava:!0},""),console.log("Sistema de retenção pronto."),window.onpopstate=t=>{o||(o=!0,r.style.display="flex",window.history.pushState({trava:!0},""))})};n.onclick=()=>{r.style.display="none";const t=encodeURIComponent("Vim pela página de Elite e quero meu Diagnóstico de Escala. Estou cansado do operacional.");window.open(`https://wa.me/5511999999999?text=${t}`,"_blank")},i.onclick=()=>{o=!1,r.style.display="none",window.onpopstate=null,window.history.go(-2)},document.addEventListener("click",e,{once:!0}),document.addEventListener("scroll",e,{once:!0})}function c(r){const n=document.querySelector("#seu-formulario");n&&n.addEventListener("submit",async i=>{i.preventDefault();const o=n.querySelector("button");o.disabled=!0,o.innerText="Enviando...";const e=Object.fromEntries(new FormData(n).entries());try{(await fetch(r,{method:"POST",body:JSON.stringify(e)})).ok&&(window.location.href="/obrigado.html")}catch{alert("Erro ao enviar. Tente novamente."),o.disabled=!1,o.innerText="Enviar"}})}window.addEventListener("load",()=>{requestAnimationFrame(()=>{console.log("🚀 Sistemas de alta performance iniciados"),a(),c("SUA_URL_DO_WORKER_AQUI")})});
+//# sourceMappingURL=main.js.map
+</script></body>
 </html>
 
 
