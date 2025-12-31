@@ -23,9 +23,12 @@ export default defineConfig({
         path: "content", 
         format: "json",
         ui: {
-          router: () => `/`, 
-        },
-        fields: [
+        router: ({ document }) => {
+              // Tente usar apenas a barra, que representa a raiz do site
+              return `/`; 
+            },
+          },
+          fields: [
           {
             type: "string",
             name: "titulo_principal",
