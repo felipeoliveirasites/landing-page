@@ -23,12 +23,9 @@ export default defineConfig({
         path: "content", 
         format: "json",
         ui: {
-        // EM VEZ DE ROUTER, VAMOS USAR O PREVIEWURL COMO NO SEU EXEMPLO
-        previewUrl: () => {
-          return { 
-            url: `https://landing-page-8cf.pages.dev/` 
-            };
-          },
+            previewUrl: () => ({
+              url: `https://landing-page-8cf.pages.dev/?edit`,
+            }),
           },
           fields: [
           {

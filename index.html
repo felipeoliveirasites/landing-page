@@ -697,27 +697,45 @@ document.addEventListener('click', (e) => {
     </div>
 </div>
 <script>
-  // O script só 'acorda' se a URL do site tiver o sinal de edição
+  // Só ativa se o parâmetro 'edit' estiver na URL (enviado pelo previewUrl do config)
   if (window.location.search.includes('edit')) {
-    console.log("✅ Site pronto e ouvindo o Admin...");
+    
+    // 1. REQUISITO: COMPATIBILIDADE CLIENT-SIDE (Handshake)
+    // Isso avisa ao Tina que o site é "inteligente" e está pronto para renderizar dados.
+    // Sem isso, a janela lateral fecha em 2 segundos.
+    window.parent.postMessage({ type: 'tina:initialized' }, "*");
 
+    console.log("🚀 Modo Visual Conectado. Aguardando dados...");
+
+    // 2. REQUISITO: COLETA DE DADOS (Listener)
+    // Em vez de fazer uma consulta GraphQL manual, nós ouvimos o Tina que já fez a consulta por nós.
     window.addEventListener('message', (event) => {
-      // SEGURANÇA: Verifique se a mensagem vem de um lugar confiável (Tina ou seu próprio domínio)
-      if (event.origin !== window.location.origin && !event.origin.includes('tina.io')) return;
-
+      // Segurança: ignorar mensagens que não venham do Tina ou do seu domínio
       if (event.data && (event.data.type === 'tina:data' || event.data.type === 'tina:form-data')) {
-        console.log("📥 Dados recebidos do Admin!");
-        const data = event.data.data;
+        const content = event.data.data;
         
-        // Seus comandos de atualização aqui...
-        if (data?.home?.titulo_principal) {
-          document.getElementById('tina-principal').innerText = data.home.titulo_principal;
+        // Verifica se os dados da coleção 'home' chegaram
+        if (content && content.home) {
+          console.log("📥 Dados recebidos:", content.home);
+
+          // ATUALIZAÇÃO DO TÍTULO PRINCIPAL
+          const elTitulo = document.getElementById('tina-principal');
+          if (elTitulo) elTitulo.innerText = content.home.titulo_principal;
+
+          // ATUALIZAÇÃO DOS SERVIÇOS (Mapeando os 13 itens)
+          if (content.home.titulos_servicos) {
+            content.home.titulos_servicos.forEach((item, index) => {
+              const num = index + 1;
+              const elServico = document.getElementById(`tina-servico-${num}`);
+              const elDesc = document.getElementById(`tina-desc-${num}`);
+              
+              if (elServico) elServico.innerText = item.texto || "";
+              if (elDesc) elDesc.innerText = item.descricao || "";
+            });
+          }
         }
       }
     });
-
-    // AVISO AO PAI: "Ei Admin, eu carreguei e estou pronto!"
-    window.parent.postMessage({ type: 'tina:initialized' }, "*");
   }
 </script>
 <script>(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function r(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(e){if(e.ep)return;e.ep=!0;const s=r(e);fetch(e.href,s)}})();function g(){const t=document.getElementById("modal-retencao"),n=document.getElementById("btn-ficar"),r=document.getElementById("btn-sair");let o=!1;const e=()=>{window.history.state?.trava||(window.history.pushState({trava:!0},""),console.log("Sistema de retenção pronto."),window.onpopstate=s=>{o||(o=!0,t.style.display="flex",window.history.pushState({trava:!0},""))})};n.onclick=()=>{t.style.display="none";const s=encodeURIComponent("Vim pela página de Elite e quero meu Diagnóstico de Escala. Estou cansado do operacional.");window.open(`https://wa.me/5511999999999?text=${s}`,"_blank")},r.onclick=()=>{o=!1,t.style.display="none",window.onpopstate=null,window.history.go(-2)},document.addEventListener("click",e,{once:!0}),document.addEventListener("scroll",e,{once:!0})}function h(){document.getElementById("theme-toggle").addEventListener("click",()=>{document.documentElement.getAttribute("data-theme")==="light"?(document.documentElement.setAttribute("data-theme","dark"),localStorage.setItem("theme","dark")):(document.documentElement.setAttribute("data-theme","light"),localStorage.setItem("theme","light"))})}function E(){const t={root:null,rootMargin:"0px",threshold:.1},n=new IntersectionObserver(r=>{r.forEach(o=>{const e=o.target;o.isIntersecting?(requestAnimationFrame(()=>{e.classList.add("active"),e.classList.add("animate")}),e.classList.contains("reveal")&&n.unobserve(e)):e.classList.contains("reveal")||requestAnimationFrame(()=>{e.classList.remove("active")})})},t);document.querySelectorAll(".reveal, header, section, footer").forEach(r=>{n.observe(r)})}function y(){const t=document.getElementById("modal-compra"),n=document.getElementById("quero-ser-elite"),r=document.querySelector(".modal__close"),o=document.querySelector(".btn-checkout"),e=document.getElementById("btn-icon-treinamento"),s=document.getElementById("cta_faq"),c=document.getElementById("btn_hero__button"),m=a=>new Promise((d,p)=>{if(document.querySelector(`script[src="${a}"]`))return d();const i=document.createElement("script");i.src=a,i.async=!0,i.onload=d,i.onerror=p,document.head.appendChild(i)}),l=a=>{a.preventDefault(),t.style.display="flex",document.body.style.overflow="hidden",m("https://sdk.mercadopago.com/js/v2").catch(d=>console.error("Erro ao pré-carregar SDK",d))},u=()=>{t.style.display="none",document.body.style.overflow="auto"},f=async()=>{o.innerHTML='<span class="spinner"></span> PROCESSANDO...',o.style.pointerEvents="none";try{await m("https://sdk.mercadopago.com/js/v2"),setTimeout(()=>{const a=document.createElement("div");a.className="api-simulada-overlay",a.innerHTML=`
