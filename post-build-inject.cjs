@@ -14,6 +14,11 @@ try {
     files.forEach(file => {
         const filePath = path.join(DIST_DIR, file);
         let html = fs.readFileSync(filePath, 'utf8');
+        // Adicione isso para debugar:
+if (file === 'index.html') {
+    console.log('--- CONTEÚDO DO INDEX ---');
+    console.log(html.substring(0, 500)); // Mostra os primeiros 500 caracteres
+}
         let contador = 0;
 
         // 1. Substitui Título Principal (Regex aceita espaços internos)
