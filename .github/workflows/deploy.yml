@@ -1,0 +1,38 @@
+name: Injetar e Publicar via TinaCMS
+
+on:
+  push:
+    branches: [main]
+  # Permite que o Tina Cloud avise o GitHub para rodar isso
+  repository_dispatch:
+    types: [tina-cloud-publish]
+
+jobs:
+  build-and-inject:
+    runs-on: ubuntu-latest
+    # Segurança para evitar que o robô entre em loop infinito
+    if: github.event.head_commit.author.name != 'github-actions[bot]'
+    
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+        with:
+          # Permite que o GitHub Actions escreva de volta no repositório
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Rodar o Robô de Injeção
+        run: node ./post-build-inject.cjs
+
+      - name: Salvar Mudanças (Push para o Cloudflare ver)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          # Só faz commit se houver mudança real no HTML
+          git diff --quiet && git diff --staged --quiet || (git commit -m "cms: atualização de conteúdo via robô" && git push)
