@@ -23,10 +23,12 @@ export default defineConfig({
         path: "content", 
         format: "json",
         ui: {
-        router: ({ document }) => {
-              // Tente usar apenas a barra, que representa a raiz do site
-              return `/`; 
-            },
+        // EM VEZ DE ROUTER, VAMOS USAR O PREVIEWURL COMO NO SEU EXEMPLO
+        previewUrl: () => {
+          return { 
+            url: `https://landing-page-8cf.pages.dev/` 
+            };
+          },
           },
           fields: [
           {
