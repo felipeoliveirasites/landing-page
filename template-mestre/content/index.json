@@ -1,12 +1,8 @@
 {
-<<<<<<< HEAD
-  "titulo_principal": "Soluções Digitais que Impulsionam seu Negócio",
-=======
   "titulo_principal": "nada",
->>>>>>> 2ae257465d04f5d44b7596d72d66ea7780ac3b58
   "titulos_servicos": [
     {
-      "texto": "Tráfego rrrrrrrrrrrrrrrrrr"
+      "texto": "Teste de Deploy 123"
     },
     {
       "texto": "Websites de Alta Conversão"
