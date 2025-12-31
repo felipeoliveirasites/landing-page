@@ -23,8 +23,9 @@ export default defineConfig({
         path: "content", 
         format: "json",
         ui: {
+          // O ROUTER FICA AQUI (Nível da Coleção)
           router: ({ document }) => {
-            return `/?edit`;
+            return `/index.html?edit`; 
           },
         },
         fields: [
@@ -39,7 +40,7 @@ export default defineConfig({
             name: "titulos_servicos",
             label: "Lista de Serviços",
             ui: {
-              // Mostra o texto digitado na lista lateral para facilitar a organização
+              // Aqui dentro do objeto usamos o itemProps para organizar a lista
               itemProps: (item) => ({ label: item?.texto || "Novo Serviço" }),
             },
             fields: [
@@ -53,7 +54,7 @@ export default defineConfig({
                 name: "descricao", 
                 label: "Descrição do Serviço",
                 ui: {
-                  component: "textarea" // Isso cria uma caixa de texto maior no painel
+                  component: "textarea" 
                 }
               },
             ],
