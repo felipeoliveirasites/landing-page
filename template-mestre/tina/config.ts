@@ -23,10 +23,7 @@ export default defineConfig({
         path: "content", 
         format: "json",
         ui: {
-          // O ROUTER FICA AQUI (Nível da Coleção)
-          router: ({ document }) => {
-            return `/index.html?edit`; 
-          },
+          router: () => `/`, 
         },
         fields: [
           {
