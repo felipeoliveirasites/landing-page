@@ -7,8 +7,6 @@ export default defineConfig({
 
   build: {
     outputFolder: "admin",
-    // IMPORTANTE: Como o config.ts está dentro de 'template-mestre/tina', 
-    // usamos "../" para que a pasta 'admin' seja criada dentro de 'template-mestre'
     publicFolder: "../", 
   },
   media: {
@@ -22,13 +20,9 @@ export default defineConfig({
       {
         name: "home",
         label: "Página Inicial",
-        // O caminho deve ser relativo ao arquivo config.ts.
-        // Como o JSON está em 'template-mestre/content/index.json' 
-        // e o config está em 'template-mestre/tina/config.ts', usamos apenas "content"
         path: "content", 
         format: "json",
-              ui: {
-          // Isso diz ao Tina: "Quando eu clicar no index.json, me mostre o site real"
+        ui: {
           router: ({ document }) => {
             return `/?edit`;
           },
@@ -43,12 +37,25 @@ export default defineConfig({
             type: "object",
             list: true,
             name: "titulos_servicos",
-            label: "Lista de 13 Títulos",
+            label: "Lista de Serviços",
             ui: {
-              itemProps: (item) => ({ label: item?.texto || "Novo Título" }),
+              // Mostra o texto digitado na lista lateral para facilitar a organização
+              itemProps: (item) => ({ label: item?.texto || "Novo Serviço" }),
             },
             fields: [
-              { type: "string", name: "texto", label: "Texto do Título" },
+              { 
+                type: "string", 
+                name: "texto", 
+                label: "Título do Serviço" 
+              },
+              { 
+                type: "string", 
+                name: "descricao", 
+                label: "Descrição do Serviço",
+                ui: {
+                  component: "textarea" // Isso cria uma caixa de texto maior no painel
+                }
+              },
             ],
           },
         ],
