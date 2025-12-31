@@ -695,52 +695,35 @@ document.addEventListener('click', (e) => {
             Não, prefiro continuar no operacional massante.
         </button>
     </div>
-</div><script src="https://unpkg.com/tinacms@latest/dist/sidebar.js"></script>
+</div><script>
+  if (window.location.search.includes('edit')) {
+    console.log("Modo visual ativado!");
 
-<script>
-  // Aguarda o script carregar totalmente
-  window.onload = function() {
-    if (window.location.search.includes('edit')) {
-      console.log("Modo edição detectado!");
+    window.addEventListener('message', (event) => {
+      // Verifica se a mensagem vem do TinaCMS
+      if (event.data && (event.data.type === 'tina:data' || event.data.type === 'tina:form-data')) {
+        const data = event.data.data;
+        
+        if (data && data.home) {
+          console.log("Dados recebidos em tempo real:", data.home);
 
-      // Tenta encontrar o construtor correto (TinaCMS ou Tina)
-      const TinaConstructor = window.TinaCMS || window.Tina;
+          // Atualiza o Título
+          const mainTitle = document.getElementById('tina-principal');
+          if (mainTitle) mainTitle.innerText = data.home.titulo_principal;
 
-      if (!TinaConstructor) {
-        console.error("Erro: TinaCMS não foi carregado corretamente pelo script externo.");
-        return;
+          // Atualiza os Serviços
+          data.home.titulos_servicos?.forEach((item, index) => {
+            const num = index + 1;
+            const elTit = document.getElementById(`tina-servico-${num}`);
+            const elDesc = document.getElementById(`tina-desc-${num}`);
+            
+            if (elTit) elTit.innerText = item.texto || "";
+            if (elDesc) elDesc.innerText = item.descricao || "";
+          });
+        }
       }
-
-      try {
-        const cms = new TinaConstructor();
-        cms.enable();
-        console.log("TinaCMS iniciado com sucesso!");
-
-        // Escuta as mudanças
-        cms.subscribe(({ data }) => {
-          console.log("Dados recebidos do Tina:", data);
-          if (data && data.home) {
-            // Atualiza o título
-            const titleEl = document.getElementById('tina-principal');
-            if (titleEl) titleEl.innerText = data.home.titulo_principal;
-
-            // Atualiza os serviços
-            if (data.home.titulos_servicos) {
-              data.home.titulos_servicos.forEach((item, index) => {
-                const num = index + 1;
-                const elTit = document.getElementById(`tina-servico-${num}`);
-                const elDesc = document.getElementById(`tina-desc-${num}`);
-                if (elTit) elTit.innerText = item.texto || "";
-                if (elDesc) elDesc.innerText = item.descricao || "";
-              });
-            }
-          }
-        });
-      } catch (err) {
-        console.error("Erro ao instanciar o TinaCMS:", err);
-      }
-    }
-  };
+    });
+  }
 </script>
 <script>(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function r(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(e){if(e.ep)return;e.ep=!0;const s=r(e);fetch(e.href,s)}})();function g(){const t=document.getElementById("modal-retencao"),n=document.getElementById("btn-ficar"),r=document.getElementById("btn-sair");let o=!1;const e=()=>{window.history.state?.trava||(window.history.pushState({trava:!0},""),console.log("Sistema de retenção pronto."),window.onpopstate=s=>{o||(o=!0,t.style.display="flex",window.history.pushState({trava:!0},""))})};n.onclick=()=>{t.style.display="none";const s=encodeURIComponent("Vim pela página de Elite e quero meu Diagnóstico de Escala. Estou cansado do operacional.");window.open(`https://wa.me/5511999999999?text=${s}`,"_blank")},r.onclick=()=>{o=!1,t.style.display="none",window.onpopstate=null,window.history.go(-2)},document.addEventListener("click",e,{once:!0}),document.addEventListener("scroll",e,{once:!0})}function h(){document.getElementById("theme-toggle").addEventListener("click",()=>{document.documentElement.getAttribute("data-theme")==="light"?(document.documentElement.setAttribute("data-theme","dark"),localStorage.setItem("theme","dark")):(document.documentElement.setAttribute("data-theme","light"),localStorage.setItem("theme","light"))})}function E(){const t={root:null,rootMargin:"0px",threshold:.1},n=new IntersectionObserver(r=>{r.forEach(o=>{const e=o.target;o.isIntersecting?(requestAnimationFrame(()=>{e.classList.add("active"),e.classList.add("animate")}),e.classList.contains("reveal")&&n.unobserve(e)):e.classList.contains("reveal")||requestAnimationFrame(()=>{e.classList.remove("active")})})},t);document.querySelectorAll(".reveal, header, section, footer").forEach(r=>{n.observe(r)})}function y(){const t=document.getElementById("modal-compra"),n=document.getElementById("quero-ser-elite"),r=document.querySelector(".modal__close"),o=document.querySelector(".btn-checkout"),e=document.getElementById("btn-icon-treinamento"),s=document.getElementById("cta_faq"),c=document.getElementById("btn_hero__button"),m=a=>new Promise((d,p)=>{if(document.querySelector(`script[src="${a}"]`))return d();const i=document.createElement("script");i.src=a,i.async=!0,i.onload=d,i.onerror=p,document.head.appendChild(i)}),l=a=>{a.preventDefault(),t.style.display="flex",document.body.style.overflow="hidden",m("https://sdk.mercadopago.com/js/v2").catch(d=>console.error("Erro ao pré-carregar SDK",d))},u=()=>{t.style.display="none",document.body.style.overflow="auto"},f=async()=>{o.innerHTML='<span class="spinner"></span> PROCESSANDO...',o.style.pointerEvents="none";try{await m("https://sdk.mercadopago.com/js/v2"),setTimeout(()=>{const a=document.createElement("div");a.className="api-simulada-overlay",a.innerHTML=`
                     <div class="api-simulada-content">
