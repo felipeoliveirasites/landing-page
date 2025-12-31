@@ -27,11 +27,10 @@ export default defineConfig({
         // e o config está em 'template-mestre/tina/config.ts', usamos apenas "content"
         path: "content", 
         format: "json",
-        ui: {
-          // Garante que o arquivo seja sempre index.json para o seu script de injeção achar
-          allowedActions: {
-            create: false,
-            delete: false,
+              ui: {
+          // Isso diz ao Tina: "Quando eu clicar no index.json, me mostre o site real"
+          router: ({ document }) => {
+            return `/?edit`;
           },
         },
         fields: [
