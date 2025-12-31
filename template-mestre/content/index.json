@@ -1,17 +1,21 @@
 {
-  "titulo_principal": "Sue Impulsio kkkkkkkkkkkkkkkk!!!!!!!!!!!!",
+  "titulo_principal": "Soluções Digitais que Impulsionam seu Negócio",
   "titulos_servicos": [
     {
-      "texto": "Tráfego Pago Especializado"
+      "texto": "Tráfego Pago Especializado",
+      "descricao": "Anúncios precisos no Google e Meta para atrair clientes qualificados diariamente."
     },
     {
-      "texto": "Websites de Alta Conversão"
+      "texto": "Websites de Alta Conversão",
+      "descricao": "Desenvolvemos landing pages velozes que transformam visitantes em compradores."
     },
     {
-      "texto": "Consultoria de Escala"
+      "texto": "Consultoria de Escala",
+      "descricao": "Estratégias validadas para dobrar o seu faturamento em menos de 90 dias."
     },
     {
-      "texto": "SEO e Ranqueamento"
+      "texto": "SEO e Ranqueamento",
+      "descricao": "Apareça na primeira página do Google organicamente e domine seu nicho."
     }
   ]
 }
