@@ -7,7 +7,9 @@ export default defineConfig({
 
   build: {
     outputFolder: "admin",
-    publicFolder: "../",
+    // IMPORTANTE: Como o config.ts está dentro de 'template-mestre/tina', 
+    // usamos "../" para que a pasta 'admin' seja criada dentro de 'template-mestre'
+    publicFolder: "../", 
   },
   media: {
     tina: {
@@ -20,8 +22,18 @@ export default defineConfig({
       {
         name: "home",
         label: "Página Inicial",
-        path: "content", // Onde os arquivos JSON serão salvos
+        // O caminho deve ser relativo ao arquivo config.ts.
+        // Como o JSON está em 'template-mestre/content/index.json' 
+        // e o config está em 'template-mestre/tina/config.ts', usamos apenas "content"
+        path: "content", 
         format: "json",
+        ui: {
+          // Garante que o arquivo seja sempre index.json para o seu script de injeção achar
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
         fields: [
           {
             type: "string",
