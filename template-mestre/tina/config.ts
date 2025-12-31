@@ -22,10 +22,13 @@ export default defineConfig({
         label: "Página Inicial",
         path: "content", 
         format: "json",
-        ui: {
-            previewUrl: () => ({
-              url: `https://landing-page-8cf.pages.dev/?edit`,
-            }),
+              ui: {
+            // Este é o comando que faz o Tina abrir o frame lateral
+            previewUrl: (context) => {
+              return { 
+                url: `https://landing-page-8cf.pages.dev/?edit`, 
+              };
+            },
           },
           fields: [
           {
