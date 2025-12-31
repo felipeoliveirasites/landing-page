@@ -16,23 +16,29 @@ try {
         let html = fs.readFileSync(filePath, 'utf8');
         let contador = 0;
 
-        // 1. Substitui Título Principal (Regex aceita espaços internos)
-        // Busca [[ titulo_principal ]] ou [[titulo_principal]]
-        const regexPrincipal = /\[\[\s*titulo_principal\s*\]\]/g;
+       // 1. Substitui Título Principal
+        const regexPrincipal = /\[\[\s*titulo_principal\s*\]\]/gi;
         if (regexPrincipal.test(html)) {
             html = html.replace(regexPrincipal, data.titulo_principal);
             contador++;
         }
 
-        // 2. Substitui os Títulos de Serviços
+        // 2. Substitui Títulos e Descrições de Serviços
         if (data.titulos_servicos) {
             data.titulos_servicos.forEach((item, index) => {
                 const num = index + 1;
-                // Busca [[ titulo_1 ]], [[titulo_1]], etc.
-                const regexServico = new RegExp(`\\[\\[\\s*titulo_${num}\\s*\\]\\]`, 'g');
                 
-                if (regexServico.test(html)) {
-                    html = html.replace(regexServico, item.texto);
+                // Busca [[titulo_1]], [[titulo_2]]...
+                const regexTitulo = new RegExp(`\\[\\[\\s*titulo_${num}\\s*\\]\\]`, 'gi');
+                if (regexTitulo.test(html)) {
+                    html = html.replace(regexTitulo, item.texto || "");
+                    contador++;
+                }
+
+                // BUSCA NOVA: [[descricao_1]], [[descricao_2]]...
+                const regexDesc = new RegExp(`\\[\\[\\s*descricao_${num}\\s*\\]\\]`, 'gi');
+                if (regexDesc.test(html)) {
+                    html = html.replace(regexDesc, item.descricao || ""); // Pega do JSON e coloca no HTML
                     contador++;
                 }
             });
