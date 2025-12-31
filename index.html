@@ -70,7 +70,9 @@
                         <span class="palavra-estatica"></span>
                     </div>
                 </h1>
-               <h1 id="titulo-site">[[titulo_principal]]</h1>
+               <h1 id="tina-principal">[[titulo_principal]]</h1>
+                <p id="tina-servico-1">[[titulo_1]]</p>
+                <p id="tina-servico-2">[[titulo_2]]</p>
                 <p class="hero__description">
                     O único curso que ensina a **ciência por trás da escala**, unindo tráfego de alta performance com estruturas nota 100/100 no Google.
                 </p>
@@ -692,26 +694,17 @@ document.addEventListener('click', (e) => {
     const cms = new window.TinaCMS();
     cms.enable();
 
-    // Escuta as mudanças do formulário em tempo real
     cms.subscribe(({ data }) => {
       if (data && data.home) {
-        // Atualiza o Título Principal na tela
-        const mainTitle = document.querySelector('h1'); // Ajuste o seletor se necessário
-        if (mainTitle && data.home.titulo_principal) {
-          mainTitle.innerText = data.home.titulo_principal;
-        }
+        // Atualiza o Título Principal pelo ID
+        const elPrincipal = document.getElementById('tina-principal');
+        if (elPrincipal) elPrincipal.innerText = data.home.titulo_principal;
 
-        // Atualiza a lista de 13 títulos na tela
+        // Atualiza a lista de serviços pelos IDs
         if (data.home.titulos_servicos) {
           data.home.titulos_servicos.forEach((item, index) => {
-            // Procura por qualquer elemento que tenha o texto [[titulo_X]]
-            // Nota: Isso é uma simplificação. O ideal é ter IDs ou Classes fixas.
-            const placeholders = document.querySelectorAll('*');
-            placeholders.forEach(el => {
-              if (el.children.length === 0 && el.innerText.includes(`[[titulo_${index + 1}]]`)) {
-                 el.innerText = item.texto;
-              }
-            });
+            const elServico = document.getElementById(`tina-servico-${index + 1}`);
+            if (elServico) elServico.innerText = item.texto;
           });
         }
       }
